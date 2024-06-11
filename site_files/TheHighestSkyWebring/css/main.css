@@ -7,15 +7,20 @@
     the images as variables */
 
             :root {
-                --header-image: url('https://sadhost.neocities.org/images/layouts/wp.jpeg');
-                --body-bg-image: url('spiral.gif');
+                --body-bg-image: url('/src/bg/spiral.gif');
 
                 /* colors */
-                --content: #43256E;
-                --content-bg: #2F2B19;
-                --content-fg: #ECE5B4;
-                --accent1: #F673A9;
-                --accent2: #9A4496;
+                --hunyadi-yellow: #FFB658ff;
+--black: #040301ff;
+--snow: #FFFDFFff;
+--poppy: #D3323Aff;
+--french-blue: #0472B7ff;
+                --content: var(--snow);
+                --content-bg: var(--snow);
+                --content-fg: var(--black);
+                --accent1: var(--french-blue);
+                --accent2: var(--hunyadi-yellow);
+                
             }
 
             /* if you have the URL of a font, you can set it below */
@@ -116,7 +121,7 @@
                 /* navbar color */
                 width: 100%;
                 border: 1px solid var(--content-fg);
-                margin: 10px;
+                margin-bottom: 10px;
             }
 
             #navbar ul {
@@ -159,7 +164,7 @@
                 padding: 20px;
                 font-size: smaller;
                 border: 1px solid var(--content-fg);
-                margin: 10px;
+                margin-left: 10px;
                 /* this makes the sidebar text slightly smaller */
             }
 
@@ -172,7 +177,7 @@
                 padding: 20px;
                 order: 2;
                 border: 1px solid var(--content-fg);
-                margin: 10px;
+                margin: px;
             }
 
             /* what's this "order" stuff about??
@@ -190,7 +195,7 @@
             }
 
             footer {
-                background-color: var(--accent2);
+                background-color: var(--content-bg);
                 /* background color for footer */
                 width: 100%;
                 height: 40px;
