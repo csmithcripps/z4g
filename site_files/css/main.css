@@ -7,7 +7,7 @@
     the images as variables */
 
             :root {
-                --body-bg-image: url('spiral.gif');
+                --body-bg-image: url('/src/bg/spiral.gif');
 
                 /* colors */
                 --content: #43256E;
