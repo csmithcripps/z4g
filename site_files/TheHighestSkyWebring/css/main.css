@@ -7,7 +7,7 @@
     the images as variables */
 
             :root {
-                --body-bg-image: url('/src/bg/spiral.gif');
+                --body-bg-image: url('../cloud.gif');
 
                 /* colors */
                 --hunyadi-yellow: #FFB658ff;
@@ -15,11 +15,11 @@
 --snow: #FFFDFFff;
 --poppy: #D3323Aff;
 --french-blue: #0472B7ff;
-                --content: var(--snow);
-                --content-bg: var(--snow);
-                --content-fg: var(--black);
-                --accent1: var(--french-blue);
-                --accent2: var(--hunyadi-yellow);
+                --content: #FFFDFFff;
+                --content-bg: #FFFDFFff;
+                --content-fg: #040301ff;
+                --accent1: #0472B7ff;
+                --accent2: #FFB658ff;
                 
             }
 
@@ -61,7 +61,7 @@
             body {
                 font-family: 'Nunito', sans-serif;
                 margin: 0;
-                background-color: #08031A;
+                background-color: #0472B7ff;
                 /* you can delete the line below if you'd prefer to not use an image */
                 background-size: 65px;
                 color: var(--content-fg);
@@ -95,7 +95,7 @@
             /* the area below is for all links on your page
     EXCEPT for the navigation */
             #container a {
-                color: #ED64F5;
+                color: var(--accent1);
                 font-weight: bold;
                 /* if you want to remove the underline
       you can add a line below here that says:
@@ -104,7 +104,7 @@
 
             #header {
                 width: 100%;
-                background-color: #;
+                background-color: #00000000;
                 /* header color here! */
                 height: 50px;
                 /* this is only for a background image! */
@@ -115,40 +115,32 @@
             }
 
             /* navigation section!! */
-            #navbar {
-                height: 40px;
-                background-color: var(--content-bg);
-                /* navbar color */
+            #headerBar1 {
+                height: 120px;
+                background-color: var(--accent2);
+                /* headerBar1 color */
                 width: 100%;
-                border: 1px solid var(--content-fg);
+                border: 1px solid var(--accent1);
+                margin-bottom: -10px;
+            }
+            #headerBar1 h1 {
+                font-size: 40px;
+                color: var(--content-bg);
+            }
+  
+  
+            #headerBar2 {
+                height: 50px;
+                background-color: var(--poppy);
+                /* headerBar1 color */
+                width: 100%;
+                border: 1px solid var(--content-bg);
                 margin-bottom: 10px;
             }
+            #headerBar2 h1 {
 
-            #navbar ul {
-                display: flex;
-                padding: 0;
-                margin: 0;
-                list-style-type: none;
-                justify-content: space-evenly;
-            }
-
-            #navbar li {
-                padding-top: 10px;
-            }
-
-            /* navigation links*/
-            #navbar li a {
-                color: var(--accent1);
-                /* navbar text color */
-                font-weight: 800;
-                text-decoration: none;
-                /* this removes the underline */
-            }
-
-            /* navigation link when a link is hovered over */
-            #navbar li a:hover {
-                color: #a49cba;
-                text-decoration: underline;
+                font-size: 20px;
+                color: var(--accent2);
             }
 
             #flex {
@@ -180,6 +172,23 @@
                 margin: px;
             }
 
+            .title {
+                background-color: var(--accent2);
+                height: 400px
+            }
+            .title body {
+                background-color: #333;
+                font-family: 'Luckiest Guy', cursive;
+                font-size: 100px;
+            }
+            
+            .title path {
+                fill: transparent;
+            }
+            
+            .title text {
+                fill: var(--content-bg);
+            }
             /* what's this "order" stuff about??
     allow me to explain!
     if you're using both sidebars, the "order" value
@@ -272,7 +281,7 @@
                     order: 3;
                 }
 
-                #navbar ul {
+                #headerBar1 ul {
                     flex-wrap: wrap;
                 }
             }
