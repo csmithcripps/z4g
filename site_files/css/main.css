@@ -40,7 +40,7 @@
 
 body {
     font-family: 'Garamond';
-    height: 100vh;
+    height: 100%;
     margin: 0;
     /* background-color: #08031A; */
     /* background-color: var(--content-bg); */
@@ -52,7 +52,7 @@ body {
     /* display: flex; */
     /* align-items: center; */
     /* justify-content: center; */
-    background: linear-gradient(180deg, var(--content), #111, #000), url("../src/noise.svg");
+    background: linear-gradient(180deg, var(--content), #33114e, #110736), url("../src/noise.svg");
 }
 
 * {
@@ -76,10 +76,8 @@ and change the media query according to the comment! */
 /* Main Body Links */
 #container a {
     color: #ED64F5;
-    font-weight: bold;
-    /* if you want to remove the underline
-you can add a line below here that says:
-text-decoration:none; */
+    text-align:center;
+    text-decoration:none; 
 }
 
 /* Area above Nav Bar */
@@ -329,6 +327,15 @@ section {
   border-radius: 50%;
 }
 
+.row {
+  display: flex;
+}
+
+.column {
+  text-align: center;
+  width: 33.33%;
+  padding: 15%;  
+}
 
 /* BELOW THIS POINT IS MEDIA QUERY */
 
@@ -339,12 +346,15 @@ and then subtrack it by 100. use this new number as the
 "max-width" value below
 */
 
-@media only screen and (max-width: 800px) {
+@media only screen and (max-width: 500px) {
     #flex {
         flex-wrap: wrap;
     }
 
     aside {
+        width: 100%;
+    }
+    .column {
         width: 100%;
     }
 
