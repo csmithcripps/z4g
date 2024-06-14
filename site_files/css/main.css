@@ -4,10 +4,11 @@
 
     /* colors */
     --content: #43256E;
-    --content-bg: #0E0C14;
+    --content-bg: black;
     --content-fg: #ECE5B4;
-    --accent1: #F673A9;
+    --accent1: #9f0191;
     --accent2: #9A4496;
+    --gradient-height: 100px
 }
 
 /* Include Fonts */
@@ -38,13 +39,20 @@
 /* General Formatting */
 
 body {
-    font-family: 'Nunito';
+    font-family: 'Corben', cursive;
+    height: 100vh;
     margin: 0;
-    background-color: #08031A;
+    /* background-color: #08031A; */
+    /* background-color: var(--content-bg); */
     /* you can delete the line below if you'd prefer to not use an image */
-    background-size: 65px;
+    /* background-size: 65px; */
     color: var(--content-fg);
-    background-image: var(--body-bg-image);
+    /* background-image: var(--body-bg-image); */
+    
+    /* display: flex; */
+    /* align-items: center; */
+    /* justify-content: center; */
+    background: linear-gradient(180deg, var(--content), #111, #000), url("../src/noise.svg");
 }
 
 * {
@@ -55,10 +63,13 @@ body {
 /* Site Main Container */
 #container {
     max-width: 900px;
+    height: 100%;
     /* this is the width of your layout! */
     /* if you change the above value, scroll to the bottom
 and change the media query according to the comment! */
     margin: 0 auto;
+    /* align-items: center; */
+    justify-content: center;
     /* this centers the entire page */
 }
 
@@ -73,28 +84,42 @@ text-decoration:none; */
 
 /* Area above Nav Bar */
 #header {
-    width: 100%;
-    background-color: #;
+    /* width: 100%; */
     /* header color here! */
-    height: 50px;
+    height: 400px;
     /* this is only for a background image! */
     /* if you want to put images IN the header, 
 you can add them directly to the <div id="header"></div> element! */
-    background-image: var(--header-image);
-    background-size: 0%;
+    /* background-image: var(--header-image); */
 }
-
+#header h1 {
+    position: absolute;
+    font-size: 4em;
+    padding-top: 100px;
+    font-family: "Corben", cursive;
+    letter-spacing: 0.6em;
+    line-height: 1.4em;
+    text-transform: uppercase;
+    color: teal;
+    font-weight: 400;
+    text-align: center;
+}
 /* navigation section!! */
-#navbar {
+.navbar {
+    border-radius: 25px;
     height: 40px;
     background-color: var(--content-bg);
     /* navbar color */
     width: 100%;
     border: 1px solid var(--content-fg);
+    margin-top: 10px;
     margin-bottom: 10px;
+    background-size: 65px;
+    background-image: var(--body-bg-image);
 }
 
-#navbar ul {
+
+.navbar ul {
     display: flex;
     padding: 0;
     margin: 0;
@@ -102,12 +127,12 @@ you can add them directly to the <div id="header"></div> element! */
     justify-content: space-evenly;
 }
 
-#navbar li {
+.navbar li {
     padding-top: 10px;
 }
 
 /* navigation links*/
-#navbar li a {
+.navbar li a {
     color: var(--accent1);
     /* navbar text color */
     font-weight: 800;
@@ -116,14 +141,16 @@ you can add them directly to the <div id="header"></div> element! */
 }
 
 /* navigation link when a link is hovered over */
-#navbar li a:hover {
+.navbar li a:hover {
     color: #a49cba;
     text-decoration: underline;
 }
 
 #flex {
-    display: flex;
+    display: relative;
 }
+
+
 
 /* Shared formatting for sidebars*/
 aside {
@@ -138,13 +165,43 @@ aside {
 
 /* this is the color of the main content area,
 between the sidebars! */
+
+.articletop {
+    background-color: transparent;
+    top: 0;
+    height: var(--gradient-height);
+    background: linear-gradient(0deg,
+        var(--content-bg),
+        rgba(0,0,0,0)),
+        url("../src/noise.svg");   
+    /* filter: contrast(170%) brightness(1000%); */
+  filter: contrast(145%) brightness(650%); 
+  mix-blend-mode: color-burn;
+}
+.articlebottom {
+    background-color: transparent;
+    top: 0;
+    height: var(--gradient-height);
+    background: linear-gradient(180deg,
+        var(--content-bg),
+        rgba(0,0,0,0)),
+        url("../src/noise.svg");   
+    /* filter: contrast(170%) brightness(1000%); */
+  filter: contrast(145%) brightness(650%); 
+  mix-blend-mode: color-burn;
+}
+
+
 main {
+    top: var(--gradient-height);
     background-color: var(--content-bg);
     flex: 1;
     padding: 20px;
     order: 2;
-    border: 1px solid var(--content-fg);
-    margin: px;
+    /* border: 1px solid var(--content-fg); */
+    /* margin-left: 2%; */
+    /* margin-right: 2%; */
+    /* width: 90%; */
 }
 
 /* Sidebar individual formatting */
@@ -167,6 +224,7 @@ footer {
     text-align: center;
     /* this centers the footer text */
     border: 1px solid var(--content-fg);
+    border-radius: 25px;
 }
 
 
@@ -209,13 +267,22 @@ strong {
 
 section {
   position: relative;
-  top: -40vh;
-  width: 600px;
+  top: 0%;
+  width: 100%;
   height: 600px;
 }
 
-.noise {
-  margin-top: -15%;
+.gradientNoise {
+    width=100%;
+    height=20px;
+    background:
+    linear-gradient(to right, blue, transparent),
+    url("src/noise.svg");
+    filter: contrast(170%) brightness(1000%);
+}
+
+.noiseHeader {
+  margin-top: -70%;
   width: 100%;
   height: 120%;
   background: radial-gradient(
@@ -229,15 +296,25 @@ section {
 }
 
 @media all and (-webkit-min-device-pixel-ratio:0) and (min-resolution: .001dpcm) {
-  .noise {
+  .noiseHeader {
     filter: contrast(125%) brightness(650%) invert(100%);
     mix-blend-mode: color-dodge;
+  }
+  /* .articletop { */
+  /*    */
+  /*   filter: contrast(125%) brightness(650%) invert(100%); */
+  /*   mix-blend-mode: color-dodge; */
+  /* } */
+  .navbar li a {
+    /* filter: contrast(125%) brightness(650%) invert(100%); */
+    mix-blend-mode: difference;
+    
   }
 }
 
 .center {
   position: absolute;
-  top: 0;
+  top: 0%;
   width: 100%;
   height: 100%;
   display: flex;
