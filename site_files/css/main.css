@@ -232,7 +232,7 @@ footer {
 h1,
 h2,
 h3 {
-    color: var(--accent1);
+    /* color: var(--accent1); */
 }
 
 h1 {
