@@ -47,6 +47,26 @@
             </main>
             <div class="articlebottom"></div>
 
+
+            <div class="articletop"></div>
+            <main>
+                <p><small>latest played song on <a href="http://last.fm" target="_blank">last.fm</a></small> | <small>powered by <a
+                            href="https://github.com/biancarosa/lastfm-last-played"
+                            target="_blank">@biancarosa/lastfm-last-played</a></small></p>
+            </main>
+            <script type="text/javascript">
+                let user = 'zero4good';
+                let url = 'https://lastfm-last-played.biancarosa.com.br/' + user + '/latest-song';
+                let song = document.querySelector('#song');
+                fetch(url)
+                    .then(function (response) {
+                        return response.json()
+                    }).then(function (json) {
+                        song.innerHTML = json['track']['name'] + ' - ' + json['track']['artist']['#text'];
+                    });
+            </script>
+            <div class="articlebottom"></div>
+
             <div class="articletop"></div>
             <main>
                 <h1 align=center>Grimoires</h1>
