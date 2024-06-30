@@ -45,9 +45,7 @@
             <main>
                 <h1 align="center">How did you find your way here?</h1>
                 <h3 align="center">welcome in, i hope you enjoy your visit</h3>
-                <div class="center">
-                    <div class="listening-to"></div>
-                </div>
+                <div class="listening-to"></div>
                 <script type="text/javascript">
                     $(document).ready(function () {
                         $.getJSON("http://ws.audioscrobbler.com/2.0/?method=user.getRecentTracks&user=zero4good&api_key=272b38101b394e1df2a7f1127d03e4f7&limit=2&format=json&callback=?", function (data) {
@@ -55,7 +53,7 @@
                             var counter = 1;
                             $.each(data.recenttracks.track, function (i, item) {
                                 if (counter == 1) {
-                                    html += 'Currently listening to: <span><a href="' + item.url + '" target="_blank">' + item.name + '</a> - ' + item.artist['#text'] + '</span>';
+                                    html += 'The void whispers, and they sound like <span><a href="' + item.url + '" target="_blank">' + item.name + '</a> - ' + item.artist['#text'] + '</span>';
                                 }
                                 counter++
                             });
