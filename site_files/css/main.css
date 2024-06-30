@@ -36,10 +36,14 @@
     font-weight: bold;
 }
 
+@font-face {
+    font-family: Venice;
+    src: url('../fonts/VeniceClassic.ttf');
+}
 /* General Formatting */
 
 body {
-    font-family: 'Garamond';
+    font-family: 'Venice';
     height: 100%;
     margin: 0;
     /* background-color: #08031A; */

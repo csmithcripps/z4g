@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title></title>
     <link rel="stylesheet" href="css/main.css">
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
 </head>
 
 <body>
@@ -43,31 +44,24 @@
             <div class="articletop"></div>
             <main>
                 <h1 align="center">How did you find your way here?</h1>
-                <h3 align="center">welcome in, i hope you enjoy your visit</p>
+                <h3 align="center">welcome in, i hope you enjoy your visit<h3>
+                        <div style="align=center" class="listening-to"></div>
+                        <script type="text/javascript">
+                            $(document).ready(function () {
+                                $.getJSON("http://ws.audioscrobbler.com/2.0/?method=user.getRecentTracks&user=zero4good&api_key=272b38101b394e1df2a7f1127d03e4f7&limit=2&format=json&callback=?", function (data) {
+                                    var html = '';
+                                    var counter = 1;
+                                    $.each(data.recenttracks.track, function (i, item) {
+                                        if (counter == 1) {
+                                            html += 'Currently listening to: <span><a href="' + item.url + '" target="_blank">' + item.name + '</a> - ' + item.artist['#text'] + '</span>';
+                                        }
+                                        counter++
+                                    });
+                                    $('.listening-to').append(html);
+                                });
+                            });
+                        </script>
             </main>
-            <div class="articlebottom"></div>
-
-
-            <div class="articletop"></div>
-            <main>
-                
-                <div>&#127911; <span id="song">&#8987;</span></div>
-                <div>
-                    <p><small>latest played song on <a href="http://last.fm" target="_blank">last.fm</a> | powered by <a href="https://github.com/biancarosa/lastfm-last-played"
-                                target="_blank">@biancarosa/lastfm-last-played</a></small></p>
-                </div>
-            </main>
-            <script type="text/javascript">
-                let user = 'zero4good';
-                let url = 'https://lastfm-last-played.biancarosa.com.br/' + user + '/latest-song';
-                let song = document.querySelector('#song');
-                fetch(url)
-                    .then(function (response) {
-                        return response.json()
-                    }).then(function (json) {
-                        song.innerHTML = json['track']['name'] + ' - ' + json['track']['artist']['#text'];
-                    });
-            </script>
             <div class="articlebottom"></div>
 
             <div class="articletop"></div>
