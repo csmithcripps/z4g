@@ -61,10 +61,10 @@
                             var counter = 1;
                             $.each(data.recenttracks.track, function (i, item) {
                                 if (counter <= 5) {
-                                    html += '<span><a  href="' + item.url + '" target="_blank">'
-                                    html += '<img src=' + item.image[0]['#text'] + '></a>'
+                                    html += '<p><span><a  href="' + item.url + '" target="_blank">'
+                                    html += '<img src=' + item.image[1]['#text'] + '></a>'
                                     html += '<a href="' + item.url + '" target="_blank">' + item.name
-                                    html += '</a> - ' + item.artist['#text'] + '</span>';
+                                    html += '</a> - ' + item.artist['#text'] + '</span></p>';
                                 }
                                 counter++
                             });
