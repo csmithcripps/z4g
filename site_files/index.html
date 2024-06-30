@@ -63,12 +63,11 @@
                                 if (counter <= 3) {
                                     html += '<p><span><a  href="' + item.url + '" target="_blank">'
                                     html += '<img src=' + item.image[1]['#text'] + '></a></p>'
-                                    html += '<p>' + counter '. <a href="' + item.url + '" target="_blank">' + item.name
+                                    html += '<p>' + counter + '. <a href="' + item.url + '" target="_blank">' + item.name
                                     html += '</a> - ' + item.artist['#text'] + '</span></p>';
                                 }
                                 counter++
                             });
-                            html += ''
                             $('.listening-to').append(html);
                         });
                     });
