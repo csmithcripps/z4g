@@ -48,32 +48,32 @@
             </main>
             <div class="articlebottom"></div>
 
-            <div class="leftSidebar">
+            <div id="leftSidebar">
                 <div class="articletop"></div>
-                <!-- <main> -->
-                <h1 align="center">Void Whispers</h1>
-                <h3 align="center">Recently the void has sounded like</h3>
+                <main>
+                    <h1 align="center">Void Whispers</h1>
+                    <h3 align="center">Recently the void has sounded like</h3>
 
-                <div align="center" class="listening-to"></div>
-                <script type="text/javascript">
-                    $(document).ready(function () {
-                        $.getJSON("http://ws.audioscrobbler.com/2.0/?method=user.getRecentTracks&user=zero4good&api_key=272b38101b394e1df2a7f1127d03e4f7&limit=3&format=json&callback=?", function (data) {
-                            var html = '';
-                            var counter = 1;
-                            $.each(data.recenttracks.track, function (i, item) {
-                                if (counter <= 3) {
-                                    html += '<p><span><a  href="' + item.url + '" target="_blank">'
-                                    html += '<img src=' + item.image[1]['#text'] + '></a></p>'
-                                    html += '<p>' + counter + '. <a href="' + item.url + '" target="_blank">' + item.name
-                                    html += '</a> - ' + item.artist['#text'] + '</span></p>';
-                                }
-                                counter++
+                    <div align="center" class="listening-to"></div>
+                    <script type="text/javascript">
+                        $(document).ready(function () {
+                            $.getJSON("http://ws.audioscrobbler.com/2.0/?method=user.getRecentTracks&user=zero4good&api_key=272b38101b394e1df2a7f1127d03e4f7&limit=3&format=json&callback=?", function (data) {
+                                var html = '';
+                                var counter = 1;
+                                $.each(data.recenttracks.track, function (i, item) {
+                                    if (counter <= 3) {
+                                        html += '<p><span><a  href="' + item.url + '" target="_blank">'
+                                        html += '<img src=' + item.image[1]['#text'] + '></a></p>'
+                                        html += '<p>' + counter + '. <a href="' + item.url + '" target="_blank">' + item.name
+                                        html += '</a> - ' + item.artist['#text'] + '</span></p>';
+                                    }
+                                    counter++
+                                });
+                                $('.listening-to').append(html);
                             });
-                            $('.listening-to').append(html);
                         });
-                    });
-                </script>
-                <!-- </main> -->
+                    </script>
+                </main>
                 <div class="articlebottom"></div>
             </div>
 
