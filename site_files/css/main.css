@@ -12,39 +12,21 @@
 }
 
 /* Include Fonts */
-@font-face {
-    font-family: Nunito;
-    src: url('https://sadhost.neocities.org/fonts/Nunito-Regular.ttf');
-}
-
-@font-face {
-    font-family: Nunito;
-    src: url('https://sadhost.neocities.org/fonts/Nunito-Bold.ttf');
-    font-weight: bold;
-}
-
-@font-face {
-    font-family: Nunito;
-    src: url('https://sadhost.neocities.org/fonts/Nunito-Italic.ttf');
-    font-style: italic;
-}
-
-@font-face {
-    font-family: Nunito;
-    src: url('https://sadhost.neocities.org/fonts/Nunito-BoldItalic.ttf');
-    font-style: italic;
-    font-weight: bold;
-}
 
 @font-face {
     font-family: Venice;
-    src: url('/fonts/VeniceClassic.ttf');
+    src: url('../fonts/VeniceClassic.ttf');
+}
+@font-face {
+    font-family: CeltG;
+    src: url('../fonts/CELTG___.TTF');
 }
 /* General Formatting */
 
 body {
     font-family: 'Venice';
-    height: 100%;
+    font-size: 19px;
+    height: 200%;
     margin: 0;
     /* background-color: #08031A; */
     /* background-color: var(--content-bg); */
@@ -56,7 +38,7 @@ body {
     /* display: flex; */
     /* align-items: center; */
     /* justify-content: center; */
-    background: linear-gradient(180deg, var(--content), #33114e, #110736), url("../src/noise.svg");
+    background: linear-gradient(180deg,  #110736, #110031, #110736), url("../src/noise.svg");
 }
 
 * {
@@ -150,20 +132,41 @@ you can add them directly to the <div id="header"></div> element! */
 
 #flex {
     display: relative;
+    position:relative;
+    top: 0px;
 }
 
+rightBody{
 
+    background-color: transparent;
+    /* width: 200px; */
+    /* padding: 20px; */
+    /* font-size: smaller; */
+    /* border: 1px solid var(--content-fg); */
+    vertical-align:middle;
+    margin-left: 10px;
+    /* top: 0%; */
+    left: 22%;
+    width: 70%;
+    position: absolute;
+    height: 100%;
+}
 
 /* Shared formatting for sidebars*/
 aside {
-    background-color: var(--content-bg);
-    width: 200px;
-    padding: 20px;
+    background-color: transparent;
+    /* width: 200px; */
+    /* padding: 20px; */
     font-size: smaller;
-    border: 1px solid var(--content-fg);
-    margin-left: 10px;
+    /* border: 1px solid var(--content-fg); */
+    /* top: 0%; */
+    vertical-align:middle;
+    /* margin: 1px; */
+    width: 20%;
+    position: absolute;
+    height: 100%;
+    /* overflow: auto; */
 }
-
 
 /* this is the color of the main content area,
 between the sidebars! */
@@ -205,6 +208,40 @@ main {
     /* margin-right: 2%; */
     /* width: 90%; */
 }
+.row{
+    position:relative;
+    height:200px;
+}
+.column1 {
+    position:absolute;
+    left: 0%;
+    top: 0%;
+    text-align: center;
+    width: 33.33%;
+    padding-top: 5%; 
+    padding-left: 15%; 
+    padding-right: 15%; 
+}
+.column2 {
+    position:absolute;
+    left: 33.33%;
+    top: 0%;
+    text-align: center;
+    width: 33.33%;
+    padding-top: 5%; 
+    padding-left: 15%; 
+    padding-right: 15%; 
+}
+.column3 {
+    position:absolute;
+    left: 66.66%;
+    top: 0%;
+    text-align: center;
+    width: 33.33%;
+    padding-top: 5%; 
+    padding-left: 15%; 
+    padding-right: 15%; 
+}
 
 /* Sidebar individual formatting */
 #leftSidebar {
@@ -235,6 +272,7 @@ h1,
 h2,
 h3 {
     /* color: var(--accent1); */
+    font-family: "CeltG";
 }
 
 h1 {
@@ -300,7 +338,7 @@ section {
 @media all and (-webkit-min-device-pixel-ratio:0) and (min-resolution: .001dpcm) {
   .noiseHeader {
     filter: contrast(125%) brightness(650%) invert(100%);
-    mix-blend-mode: color-dodge;
+    mix-blend-mode: difference;
   }
   /* .articletop { */
   /*    */
@@ -331,54 +369,18 @@ section {
   border-radius: 50%;
 }
 
-.row {
-  display: flex;
-}
-
-.column {
-  text-align: center;
-  width: 33.33%;
-  padding: 15%;  
-}
-
-/* BELOW THIS POINT IS MEDIA QUERY */
-
-/* so you wanna change the width of your page? 
-by default, the container width is 900px.
-in order to keep things responsive, take your new height,
-and then subtrack it by 100. use this new number as the 
-"max-width" value below
-*/
-
-@media only screen and (max-width: 500px) {
-    #flex {
-        flex-wrap: wrap;
-    }
-
-    aside {
+@media screen and (max-width: 700px) {
+  aside {
+    width: 100%;
+    height: auto;
+    position: relative;
+        left:0%;
+  }
+  rightBody {
         width: 100%;
-    }
-    .column {
-        width: 100%;
-    }
-
-    /* the order of the items is adjusted here for responsiveness!
-since the sidebars would be too small on a mobile device.
-feel free to play around with the order!
-*/
-    main {
-        order: 1;
-    }
-
-    #leftSidebar {
-        order: 2;
-    }
-
-    #rightSidebar {
-        order: 3;
-    }
-
-    #navbar ul {
-        flex-wrap: wrap;
+        height: auto;
+        position: relative;
+        left:0%;
     }
 }
+

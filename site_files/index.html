@@ -41,14 +41,7 @@
 
 
         <div id="flex">
-            <div class="articletop"></div>
-            <main>
-                <h1 align="center">How did you find your way here?</h1>
-                <h3 align="center">welcome in, i hope you enjoy your visit</h3>
-            </main>
-            <div class="articlebottom"></div>
-
-            <div id="leftSidebar">
+            <aside id="leftSidebar">
                 <div class="articletop"></div>
                 <main>
                     <h1 align="center">Void Whispers</h1>
@@ -63,9 +56,9 @@
                                 $.each(data.recenttracks.track, function (i, item) {
                                     if (counter <= 3) {
                                         html += '<p><span><a  href="' + item.url + '" target="_blank">'
-                                        html += '<img src=' + item.image[1]['#text'] + '></a></p>'
+                                        html += '<img style="border-radius: 25%;" src=' + item.image[1]['#text'] + '></a></p>'
                                         html += '<p>' + counter + '. <a href="' + item.url + '" target="_blank">' + item.name
-                                        html += '</a> - ' + item.artist['#text'] + '</span></p>';
+                                        html += '</a> - ' + item.artist['#text'] + '</span></p><hr>';
                                     }
                                     counter++
                                 });
@@ -75,29 +68,42 @@
                     </script>
                 </main>
                 <div class="articlebottom"></div>
-            </div>
+            </aside>
 
-            <div class="articletop"></div>
-            <main>
-                <h1 align=center>Grimoires</h1>
-                <div class="row">
-                    <div class="column">
-                        <img src="src/HoMM3 Spell Book.png" style="width:40px">
-                        <p>Mastering The Web</p>
+            <rightBody>
+                <div class="articletop"></div>
+                <main>
+                    <h1 align="center">How did you find your way here?</h1>
+                    <h3 align="center">welcome in, i hope you enjoy your visit</h3>
+                </main>
+                <div class="articlebottom"></div>
+
+
+                <div class="articletop"></div>
+                <main>
+                    <h1 align=center>Grimoires</h1>
+                    <hr>
+                    <div class="row">
+                        <div class="column1">
+                            <img src="src/HoMM3 Spell Book.png" style="width:40px">
+                            <p>Mastering The Web</p>
+                        </div>
+                        <div class="column2">
+                            <a href="links.html">
+                                <img src="src/HoMM3 Spell Book 2.png" style="width:40px">
+                            </a>
+                            <a href="links.html">Visions Beyond The Orb</a>
+                        </div>
+                        <div class="column3">
+                            <img src="src/HoMM3 Spell Book 3.png" style="width:40px">
+                            <p>Maleficent Musings</p>
+                        </div>
                     </div>
-                    <div class="column">
-                        <a href="links.html">
-                            <img src="src/HoMM3 Spell Book 2.png" style="width:40px">
-                        </a>
-                        <a href="links.html">Visions Beyond The Orb</a>
-                    </div>
-                    <div class="column">
-                        <img src="src/HoMM3 Spell Book 3.png" style="width:40px">
-                        <p>Maleficent Musings</p>
-                    </div>
-                </div>
-            </main>
-            <div class="articlebottom"></div>
+                    <hr>
+                </main>
+                <div class="articlebottom"></div>
+            </rightBody>
+
         </div>
         <!-- <div class="navbar"> -->
         <!--     <ul> -->
