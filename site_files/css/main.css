@@ -21,6 +21,10 @@
     font-family: CeltG;
     src: url('../fonts/CELTG___.TTF');
 }
+@font-face {
+    font-family: Moon;
+    src: url('../fonts/moon_phases.ttf');
+}
 /* General Formatting */
 
 body {
