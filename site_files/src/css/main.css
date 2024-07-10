@@ -66,18 +66,18 @@ body {
 #header {
     height: 400px;
 }
-#header h1 {
-    position: absolute;
-    font-size: 4em;
-    padding-top: 100px;
-    font-family: "Corben", cursive;
-    letter-spacing: 0.6em;
-    line-height: 1.4em;
-    text-transform: uppercase;
-    color: teal;
-    font-weight: 400;
-    text-align: center;
-}
+/* #header h1 { */
+/*     position: absolute; */
+/*     font-size: 4em; */
+/*     padding-top: 100px; */
+/*     font-family: "Corben", cursive; */
+/*     letter-spacing: 0.6em; */
+/*     line-height: 1.4em; */
+/*     text-transform: uppercase; */
+/*     color: teal; */
+/*     font-weight: 400; */
+/*     text-align: center; */
+/* } */
 /* navigation section!! */
 .navbar {
     border-radius: 25px;

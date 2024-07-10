@@ -14,16 +14,18 @@
     <svg width="0" height="0" style="display: block;">
         <defs>
             <filter id="noise">
-                <feTurbulence type="fractalNoise" baseFrequency="19.5" numOctaves="10" result="turbulence" />
-                <feComposite operator="in" in="turbulence" in2="SourceAlpha" result="composite" />
-                <feColorMatrix in="composite" type="luminanceToAlpha" />
-                <feBlend in="SourceGraphic" in2="composite" mode="color-burn" />
+                <feTurbulence type="fractalNoise" baseFrequency="20" numOctaves="10" result="stitch" />
+                <!-- <feComposite operator="in" in="turbulence" in2="SourceAlpha" result="composite" /> -->
+                <!-- <feColorMatrix in="composite" type="luminanceToAlpha" /> -->
+                <!-- <feTurbulence type='fractalNoise' baseFrequency='100.65' numOctaves='4' stitchTiles='stitch' /> -->
+                <feBlend in="SourceGraphic" in2="stitch" mode="color-burn" />
+
             </filter>
             <mask id="shape-mask">
                 <radialGradient id="fade-gradient">
-                    <stop offset="0%" stop-color="black" stop-opacity="0.6" />
-                    <stop offset="65%" stop-color="white" stop-opacity="0.9" />
-                    <stop offset="75%" stop-color="white" stop-opacity="1" />
+                    <stop offset="0%" stop-color="white" stop-opacity="1" />
+                    <!-- <stop offset="25%" stop-color="white" stop-opacity="0.4" /> -->
+                    <stop offset="100%" stop-color="white" stop-opacity="0" />
                 </radialGradient>
                 <use href="#circle" fill="url('#fade-gradient')" />
             </mask>
@@ -34,17 +36,17 @@
     <div id="topbar"></div>
 
     <div id="container">
-        <!-- <div id="header"></div> -->
-        <div id="header2">
-            <section>
-                <div class="center">
-                    <svg class="shape" viewbox="0 0 200 175">
-                        <use href="#circle" fill="hsl(269, 65%, 52%)" x="0" y="0" mask="url(#shape-mask)"
-                            filter="url('#noise')" />
-                    </svg>
-                </div>
-            </section>
-        </div>
+        <div id="header"></div>
+        <!-- <div id="header2"> -->
+        <!--     <section> -->
+        <!--         <div class="center"> -->
+        <!--             <svg class="shape" viewbox="0 20 100 100"> -->
+        <!--                 <use href="#circle" fill="hsl(74, 18%, 94%)" x="0" y="0" mask="url(#shape-mask)" -->
+        <!--                     filter="url('#noise')" /> -->
+        <!--             </svg> -->
+        <!--         </div> -->
+        <!--     </section> -->
+        <!-- </div> -->
         <div id="flex">
 
             <rightBody>
