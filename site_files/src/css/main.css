@@ -66,59 +66,6 @@ body {
 #header {
     height: 400px;
 }
-/* #header h1 { */
-/*     position: absolute; */
-/*     font-size: 4em; */
-/*     padding-top: 100px; */
-/*     font-family: "Corben", cursive; */
-/*     letter-spacing: 0.6em; */
-/*     line-height: 1.4em; */
-/*     text-transform: uppercase; */
-/*     color: teal; */
-/*     font-weight: 400; */
-/*     text-align: center; */
-/* } */
-/* navigation section!! */
-.navbar {
-    border-radius: 25px;
-    height: 40px;
-    background-color: var(--content-bg);
-    /* navbar color */
-    width: 100%;
-    border: 1px solid var(--content-fg);
-    margin-top: 10px;
-    margin-bottom: 10px;
-    background-size: 65px;
-    background-image: var(--body-bg-image);
-}
-
-
-.navbar ul {
-    display: flex;
-    padding: 0;
-    margin: 0;
-    list-style-type: none;
-    justify-content: space-evenly;
-}
-
-.navbar li {
-    padding-top: 10px;
-}
-
-/* navigation links*/
-.navbar li a {
-    color: var(--accent1);
-    /* navbar text color */
-    font-weight: 800;
-    text-decoration: none;
-    /* this removes the underline */
-}
-
-/* navigation link when a link is hovered over */
-.navbar li a:hover {
-    color: #a49cba;
-    text-decoration: underline;
-}
 
 #flex {
     display: relative;
@@ -217,26 +164,6 @@ main {
     padding-right: 15%; 
 }
 
-/* Sidebar individual formatting */
-#leftSidebar {
-    order: 1;
-}
-
-#rightSidebar {
-    order: 3;
-}
-
-
-/* Footer formatting */
-footer {
-    background-color: var(--content-bg);
-    width: 100%;
-    height: 40px;
-    padding: 10px;
-    text-align: center;
-    border: 1px solid var(--content-fg);
-    border-radius: 25px;
-}
 
 
 /* Text Formatting */
@@ -277,21 +204,6 @@ strong {
 
 /* For Gradient Circle */
 
-section {
-  position: relative;
-  top: 0%;
-  width: 100%;
-  height: 600px;
-}
-
-.gradientNoise {
-    width:100%;
-    height:20px;
-    background:
-    linear-gradient(to right, blue, transparent),
-    var(--noise-image);
-    filter: contrast(170%) brightness(1000%);
-}
 
 .noiseHeader {
   margin-top: -70%;
@@ -346,26 +258,3 @@ section {
     }
 }
 
-
-/* Animations */
-  
-  .topbar div {
-    display: block;
-    width: 200%;
-    height: 30px;
-  
-    position: absolute;
-    overflow: hidden;
-  
-    animation: marquee 5s linear infinite;
-  }
-  
-  .marquee span {
-    float: left;
-    width: 50%;
-  }
-  
-  @keyframes marquee {
-    0% { left: 0; }
-    100% { left: -100%; }
-  }
