@@ -1,12 +1,15 @@
-name: Deploy to neocities
+name: Deploy to neociteis
 
-# only run on changes to main. Use main or master depending on whatever your default branch is called.
 on:
   push:
     branches:
       - main
 
-concurrency: # prevent concurrent deploys doing strange things
+env:
+  node-version: 21
+  FORCE_COLOR: 2
+  
+concurrency: # prevent concurrent deploys doing starnge things
   group: deploy-to-neocities
   cancel-in-progress: true
 
@@ -16,18 +19,22 @@ jobs:
 
     steps:
     - uses: actions/checkout@v4
-    # Set up any tools and build steps here
-    # This example uses a Node.js toolchain to build a site
+    - name: Create LFS file list
+      run: git lfs ls-files -l | cut -d' ' -f1 | sort > .lfs-assets-id
+    - name: Restore LFS cache
+      uses: actions/cache@v4
+      id: lfs-cache
+      with:
+        path: .git/lfs
+        key: ${{ runner.os }}-lfs-${{ hashFiles('.lfs-assets-id') }}-v1
+    - name: Git LFS Pull
+      run: git lfs pull
+
     - name: Use Node.js
       uses: actions/setup-node@v4
       with:
-        node-version: lts/*
+        node-version: ${{env.node-version}}
     - run: npm i
-    - run: npm run build
-    # When the dist_dir is ready, deploy it to neocities
-    - name: Deploy to neocities
-      uses: bcomnes/deploy-to-neocities@v2
-      with:
-        api_token: ${{ secrets.NEOCITIES_API_TOKEN }}
-        cleanup: true
-        dist_dir: site_files
+    - run: npm run deploy
+      env:
+        NEOCITIES_API_TOKEN: ${{ secrets.NEOCITIES_API_TOKEN }}
