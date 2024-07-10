@@ -10,21 +10,28 @@
     <strong>a e i m q u y</strong>
 </p>
 <div class="row">
-    <div class="column1">
+    <div class="column1" onclick="changeContentElement('/src/partials/under_construction.html')">
         <img src="src/HoMM3 Spell Book.png" style="height:50px">
         <p>Mastering The Web</p>
     </div>
-    <div class="column2">
-        <a href="links.html">
-            <img src="src/HoMM3 Spell Book 2.png" style="height:50px">
-        </a>
-        <a href="links.html">Visions Beyond The Orb</a>
+    <div class="column2" onclick="changeContentElement('/src/partials/under_construction.html')">
+        <img src="src/HoMM3 Spell Book 2.png" style="height:50px">
+        <p>Visions Beyond The Orb</p>
     </div>
-    <div class="column3">
+    <div class="column3" onclick="changeContentElement('/src/partials/under_construction.html')">
         <img src="src/HoMM3 Spell Book 3.png" style="height:50px">
         <p>Maleficent Musings</p>
     </div>
 </div>
+<div id="openSpellBook"></div>
+
 <p style="font-family: Moon; text-align:center;padding-bottom: 2cm;">
     <strong>a e i m q u y</strong>
 </p>
+
+<script>
+    changeContentElement(newContent){
+        $("#openSpellBook").empty()
+        $("#openSpellBook").load(newContent)
+    }
+</script>

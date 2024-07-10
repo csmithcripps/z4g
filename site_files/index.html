@@ -25,61 +25,6 @@
                 <div class="articletop"></div>
                 <main>
                     <div id="guestbook"></div>
-                    <h1 align="center">Void Whispers</h1>
-                    <h3 align="center">Recently the void has sounded like</h3>
-
-                    <div align="center" class="git-commits"></div>
-                    <script>
-                        var xmlhttp = new XMLHttpRequest();
-                        xmlhttp.onreadystatechange = function () {
-                            if (this.readyState == 4 && this.status == 200) {
-                                parse_entry(this);
-                            }
-                        };
-                        xmlhttp.open("GET", "https://github.com/csmithcripps/z4g/commits/main.atom", true);
-                        xmlhttp.send();
-
-                        function parse_entry(xml) {
-                            var x, i, xmlDoc, txt;
-                            xmlDoc = xml.responseXML;
-                            txt = "";
-                            x = xmlDoc.getElementsByTagName("title");
-                            for (i = 0; i < x.length; i++) {
-                                txt += x[i].childNodes[0].nodeValue + "<br>";
-                            }
-                            document.getElementById("git-commits").innerHTML = txt;
-                        }
-                    </script>
-                </main>
-                <div class="articlebottom"></div>
-                <div class="articletop"></div>
-                <main>
-                    <h1 align="center">Mastering the Web</h1>
-                    <h3 align="center">Though far from mastery, here are some changes that have been made to this part
-                        of the web</h3>
-
-                    <div align="center" class="git-commits"></div>
-                    <script>
-                        var xmlhttp = new XMLHttpRequest();
-                        xmlhttp.onreadystatechange = function () {
-                            if (this.readyState == 4 && this.status == 200) {
-                                parse_entry(this);
-                            }
-                        };
-                        xmlhttp.open("GET", "https://github.com/csmithcripps/z4g/commits/main.atom", true);
-                        xmlhttp.send();
-
-                        function parse_entry(xml) {
-                            var x, i, xmlDoc, txt;
-                            xmlDoc = xml.responseXML;
-                            txt = "";
-                            x = xmlDoc.getElementsByTagName("title");
-                            for (i = 0; i < x.length; i++) {
-                                txt += x[i].childNodes[0].nodeValue + "<br>";
-                            }
-                            document.getElementById("git-commits").innerHTML = txt;
-                        }
-                    </script>
                 </main>
                 <div class="articlebottom"></div>
 
