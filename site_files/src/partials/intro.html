@@ -1,9 +1,4 @@
-<script type="application/javascript">
-    changeContentElement(newContent){
-        $("#openSpellBook").empty()
-        $("#openSpellBook").load(newContent)
-    }
-</script>
+
 <h1 align="center">How did you find your way here?</h1>
 <h3 align="center">welcome in, i hope you enjoy your visit</h3>
 
@@ -16,15 +11,15 @@
     <strong>a e i m q u y</strong>
 </p>
 <div class="row">
-    <div class="column1" onclick="changeContentElement('/src/partials/under_construction.html')">
+    <div id="book1" class="column1">
         <img src="src/HoMM3 Spell Book.png" style="height:50px">
         <p>Mastering The Web</p>
     </div>
-    <div class="column2" onclick="changeContentElement('/src/partials/under_construction.html')">
+    <div id="book2" class="column2">
         <img src="src/HoMM3 Spell Book 2.png" style="height:50px">
         <p>Visions Beyond The Orb</p>
     </div>
-    <div class="column3" onclick="changeContentElement('/src/partials/under_construction.html')">
+    <div id="book3" class="column3">
         <img src="src/HoMM3 Spell Book 3.png" style="height:50px">
         <p>Maleficent Musings</p>
     </div>
@@ -34,3 +29,19 @@
 <p style="font-family: Moon; text-align:center;padding-bottom: 2cm;">
     <strong>a e i m q u y</strong>
 </p>
+<script type="application/javascript">
+    changeContentElement(newContent){
+        $("#openSpellBook").empty()
+        $("#openSpellBook").load(newContent)
+    }
+
+    var book1 = document.getElementById('book1');
+    book1.addEventListener('click',
+            changeContentElement('/src/partials/under_construction.html'))
+    var book2 = document.getElementById('book2');
+    book2.addEventListener('click',
+            changeContentElement('/src/partials/under_construction.html'))
+    var book3 = document.getElementById('book3');
+    book3.addEventListener('click',
+            changeContentElement('/src/partials/under_construction.html'))
+</script>
