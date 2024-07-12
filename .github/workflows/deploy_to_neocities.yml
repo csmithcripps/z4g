@@ -1,4 +1,4 @@
-name: Deploy to neocities
+name: Deploy to hosts
 
 # only run on changes to main
 on:
@@ -19,3 +19,18 @@ jobs:
         api_token: ${{ secrets.NEOCITIES_API_TOKEN }}
         cleanup: false
         dist_dir: site_files
+
+  build:
+    name: Deploy to oci
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v4
+    - name: copy file via ssh password
+      uses: appleboy/scp-action@v0.1.7
+      with:
+        host: z4g.xyz
+        username: oci
+        port: 22
+        key: ${{ secrets.KEY }}
+        source: "site_files/*"
+        target: /var/www/html/z4g/site_files
