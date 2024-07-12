@@ -33,4 +33,4 @@ jobs:
         username: opc
         key: ${{ secrets.KEY }}
         source: "site_files/*"
-        target: /var/www/html/z4g/site_files
+        target: /var/www/html/z4g/
