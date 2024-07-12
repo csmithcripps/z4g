@@ -4,7 +4,7 @@
 <div align="center" class="listening-to"></div>
 <script type="text/javascript">
     $(document).ready(function () {
-        $.getJSON("http://ws.audioscrobbler.com/2.0/?method=user.getRecentTracks&user=zero4good&api_key=272b38101b394e1df2a7f1127d03e4f7&limit=3&format=json&callback=?", function (data) {
+        $.getJSON("https://ws.audioscrobbler.com/2.0/?method=user.getRecentTracks&user=zero4good&api_key=272b38101b394e1df2a7f1127d03e4f7&limit=3&format=json&callback=?", function (data) {
             var html = '';
             var counter = 1;
             $.each(data.recenttracks.track, function (i, item) {
