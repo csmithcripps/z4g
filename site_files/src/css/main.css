@@ -68,9 +68,9 @@ body {
 }
 
 #flex {
-    display: relative;
+    /* display: relative;
     position:relative;
-    top: 0px;
+    top: 0px; */
 }
 
 rightBody{
